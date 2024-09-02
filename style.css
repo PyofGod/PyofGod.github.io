@@ -1,0 +1,345 @@
+/* ตั้งค่าเริ่มต้นให้กับทุกส่วนของเว็บ */
+
+body,
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mitr', sans-serif;
+}
+
+
+/* สไตล์ของ container หลัก */
+
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    border: 0;
+}
+
+.navbar {
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+    background: #ffffff;
+    color: black;
+}
+
+.navbar a:hover {
+    text-align: center;
+    padding-bottom: 30px;
+    background: #000000;
+    color: black;
+}
+
+.animated-background {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #7391b3, #ffffff, #9fd6ffa7);
+    background-size: 400% 400%;
+    animation: gradientAnimation 2.5s ease infinite;
+    margin: 0;
+    padding: 20px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/* Burger menu styling */
+
+.burger-menu {
+    padding-right: 10px;
+    position: relative;
+    display: inline-block;
+    cursor: focus;
+}
+
+.burger-menu .menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #333;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.burger-menu .menu-content a {
+    color: rgb(0, 0, 0);
+    padding: 16px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.burger-menu .menu-content a:hover {
+    background-color: #ffffff;
+}
+
+
+/* Show the menu when hovered */
+
+.burger-menu:hover .menu-content {
+    display: block;
+}
+
+
+/* Light/Dark Mode Styles */
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.top-bar.light-mode {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.top-bar.dark-mode {
+    background-color: #333;
+    color: #f8f9fa;
+}
+
+
+/*----ลูกเล่น-------*/
+
+.top-bar {
+    background-color: rgba(51, 51, 51, 1);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 99%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.top-bar.transparent {
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Transparent background */
+}
+
+.top-bar .social-icons {
+    margin: 0;
+}
+
+.top-bar .social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.top-bar .social-icons a:hover {
+    color: #007bff;
+    /* Change color on hover */
+}
+
+
+/*front */
+
+h1 {
+    letter-spacing: normal;
+    font-size: 48px;
+    color: #333;
+}
+
+h2 {
+    letter-spacing: 7px;
+    font-size: 36px;
+    color: #555;
+}
+
+h3 {
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-style: bold;
+    font-weight: 100;
+    font-weight: bold;
+}
+
+li {
+    align-items: left;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    text-indent: 15px;
+}
+
+
+/* สไตล์สำหรับข้อความ */
+
+.typing {
+    font-weight: bold;
+    font-size: 48px;
+    color: #333;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .09em solid rgb(0, 0, 0);
+    /* Cursor */
+    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(0, 0, 0);
+    }
+}
+
+.sec {
+    font-size: 36px;
+    color: #363636;
+    font-weight: bold;
+    opacity: 0;
+    /* Initially hide the text */
+    animation: fade-in 1s 4s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+
+/* สไตล์เนื้อหาในหน้าแรก */
+
+.hero .content {
+    z-index: 1;
+}
+
+.hero .content img {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+}
+
+.about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#soft {
+    text-align: left;
+}
+
+#COMPUTER {
+    text-align: left;
+}
+
+#work {
+    text-align: left;
+}
+
+#study {
+    text-align: left;
+}
+
+.content-container {
+    align-items: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* สไตล์ปุ่ม */
+
+.btn {
+    padding: 20px 30px;
+    background: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 510px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff35354d;
+}
+
+.btn1 {
+    padding: 20px 30px;
+    background: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 510px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn1:hover {
+    background: #ff35354d;
+}
+
+
+/* สไตล์ section ต่าง ๆ */
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
